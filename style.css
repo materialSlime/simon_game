@@ -1,8 +1,8 @@
 body {
     text-align: center;
-    background-color: rgb(53, 53, 94);
+    background-color: rgb(39, 39, 68);
     color: azure;
-    font-family:"SilkScreen", monospace;
+    font-family: "SilkScreen", monospace;
 }
 
 .game-status {
@@ -14,7 +14,7 @@ body {
 
 .window {
     background-color: rgb(59, 111, 156);
-    padding: 1em;
+    padding: 0.6em;
     padding-top: 4em;
     border-radius: 10%;
     width: 37em;
@@ -39,6 +39,7 @@ body {
     border: 0.4em solid rgb(51, 51, 51);
     border-radius: 20%;
     margin: auto;
+    transition: transform 0.1s;
 }
 
 .shadow {
@@ -48,7 +49,7 @@ body {
 .bounce-down {
     transform: scale(0.8);
 }
-    
+
 .bounce-up {
     transform: scale(1);
 }
@@ -70,3 +71,11 @@ body {
 }
 
 /* ----- Footer ----- */
+
+
+/* ------- Responsive ------- */
+@media screen and (max-width: 450px){
+    body {
+        width: 200px;
+    }
+}
