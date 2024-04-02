@@ -1,26 +1,23 @@
+let pulseOrder = [];
+let playerOrder = [];
+let gameBoxes = $(".game-box");
 
-
-
-// -------------- UI Ineractions --------------
-$(".game-box").on({
-    mouseenter: function () {
-        $(this).toggleClass("shadow");
-    },
-    mouseleave: function () {
-        $(this).toggleClass("shadow");
-    }
+$("body").on("keydown touchstart", function () {
+    let pulseRandom = Math.floor(Math.random()*4);
+    pulseOrder.push(pulseRandom);
+    console.log(pulseOrder);
 });
 
+// -------------- UI Ineractions --------------
 
 $('.game-box').on({
     "mousedown touchstart": function() {
-        $(this).toggleClass("bounce-down");
+        $(this).addClass("bounce");
     },
     "mouseup  touchend": function() {
-        $(this).toggleClass("bounce-up");
+        $(this).removeClass("bounce");
     },
     "mouseout touchcancel": function(event) {
-        $(this).removeClass("bounce-down");
-        $(this).toggleClass("bounce-up");
+        $(this).removeClass("bounce");
     }
-})
+});

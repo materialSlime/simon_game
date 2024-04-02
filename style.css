@@ -17,7 +17,7 @@ body {
     padding: 0.6em;
     padding-top: 4em;
     border-radius: 10%;
-    width: 37em;
+    width: 31em;
     border: 2px solid rgb(148, 176, 228);
     margin: auto;
 }
@@ -34,24 +34,20 @@ body {
 }
 
 .game-box {
-    width: 16em;
-    height: 16em;
+    width: 13em;
+    height: 13em;
     border: 0.4em solid rgb(51, 51, 51);
     border-radius: 20%;
     margin: auto;
     transition: transform 0.1s;
 }
 
-.shadow {
+.game-box:hover {
     box-shadow: rgb(119, 137, 202) 0px 0px 12px;
 }
 
-.bounce-down {
+.bounce {
     transform: scale(0.8);
-}
-
-.bounce-up {
-    transform: scale(1);
 }
 
 .green {
@@ -71,11 +67,24 @@ body {
 }
 
 /* ----- Footer ----- */
-
+footer {
+    position: fixed;
+    bottom: 3em;
+    width: 100%;
+}
 
 /* ------- Responsive ------- */
-@media screen and (max-width: 450px){
-    body {
-        width: 200px;
+@media (max-width: 450px) {
+    .game-status {
+        font-size: 3em;
+    }
+
+    .window {
+        width: 80%;
+    }
+
+    .container .game-box {
+        width: 7em;
+        height: 7em;
     }
 }
