@@ -10,7 +10,7 @@ function gameLogic(event) {
     randomBox = Math.floor(Math.random() * 4);
     pulseOrder.push(randomBox);
     console.log("Pulse Order", pulseOrder)
-    pulse(gameBoxes.eq(randomBox).children('div'));
+    flash(gameBoxes.eq(randomBox).children('div'));
 
     for (n = 0; n > pulseOrder.length; n++) {
         playerChoice = $(event.currentTarget).index();
@@ -26,7 +26,7 @@ function gameLogic(event) {
 
 
 // -------------- UI Ineractions --------------
-function pulse(element) {
+function flash(element) {
     element.addClass('pulse');
     // sfx = new Audio(`./sounds/${}.mp3`);
     setTimeout(() => element.removeClass('pulse'), "200");
