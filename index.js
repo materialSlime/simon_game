@@ -1,23 +1,35 @@
-let pulseOrder = [];
-let playerOrder = [];
-let gameBoxes = $(".game-box");
+gameButtons = ['green', 'red', 'yellow', 'blue'];
+flashSequence = [];
 
-$("body").on("keydown touchstart", function () {
-    let pulseRandom = Math.floor(Math.random()*4);
-    pulseOrder.push(pulseRandom);
-    console.log(pulseOrder);
-});
-
-// -------------- UI Ineractions --------------
+function newSequence () {
+    randomBox = Math.floor(Math.random() * 4)
+    flashSequence.push(randomBox);
+}
+function playSfx (button) {
+    let sxf = new Audio(`./sounds/${button}.mp3`);
+    sxf.play();
+}
+function sequenceCheck (playerChoice) {
+    for (n = 0; n < flashSequence.length; n++) {
+        if (playerChoice == flashSequence[n]) {
+            continue;
+        }
+        else {
+            return false;
+        }
+        return true;
+    }
+}
 
 $('.game-box').on({
-    "mousedown touchstart": function() {
+    "mousedown touchstart": function () {
         $(this).addClass("bounce");
+        playSfx(this.classList[1]);
     },
-    "mouseup  touchend": function() {
+    "mouseup  touchend": function () {
         $(this).removeClass("bounce");
     },
-    "mouseout touchcancel": function(event) {
+    "mouseout touchcancel": function (event) {
         $(this).removeClass("bounce");
     }
 });

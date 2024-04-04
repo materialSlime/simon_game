@@ -34,19 +34,31 @@ body {
 }
 
 .game-box {
-    padding: 50%;
+    padding: 47%;
     border: 0.4em solid rgb(51, 51, 51);
     border-radius: 20%;
     margin: auto;
     transition: transform 0.1s;
+    position: relative;
 }
 
 .game-box:hover {
     box-shadow: rgb(119, 137, 202) 0px 0px 12px;
 }
+.game-box div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 50%;
+    border-radius: 20%;
+}
 
 .bounce {
     transform: scale(0.8);
+}
+
+.pulse {
+    background-color: rgba(255, 255, 255, 0.479);;
 }
 
 .green {
@@ -67,7 +79,7 @@ body {
 
 /* ----- Footer ----- */
 footer {
-    padding: 4em;
+    padding: 3em 0;
     margin:auto;
 }
 
